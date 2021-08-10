@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ROBOCHEF</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <br><br><br>
+            <div class="col l4 s12 center"><img src="robochef.svg" width="100%" style="max-width: 300px"></div>
+            <div class="col l8 s12">
+                <h1 class="header center">Robochef</h1>
+                <blockquote class="right-align">
+                В 9/10 случаях я не знаю, что я делаю.<br>
+                    - вероятно, Робошеф
+                </blockquote>
+                <form method="post" id="robochef">
+                    <div class="input-field">
+                        <select id="cuisine" name="cuisine">
+                            {cuisine_options}
+                        </select>
+                        <label for="cuisine">Кухня:</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="dname" name="dname" size="48" value="{dname}"><br>
+                        <label for="dname">Название блюда:</label>
+                    </div>
+                    <div class="input-field">
+                        <textarea id="ingr" name="ingredients" class="materialize-textarea">{ingredients}</textarea><br>
+                        <label for="ingr">Ингредиенты:</label>
+                    </div>
+                    <div class="range-field">
+                        <label for="temp">Случайность:</label>
+                        <input type="range" id="temp" name="temperature" min="0.01" max="3.0" value="{temperature}" step="0.01"/>
+                    </div>
+                    <div class="input-field row">
+                        <button class="btn waves-effect waves-light red lighten-2 col s5" type="submit" name="action">Сгенерировать<i class="material-icons right">send</i></button>
+                        <button class="btn waves-effect waves-light red lighten-2 col s5 offset-s2" onClick="location.href='/'; return false;" type="button">Случайный пример<i class="material-icons left">autorenew</i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        {response}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

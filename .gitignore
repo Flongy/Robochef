@@ -1,0 +1,5 @@
+/.idea/
+/__pycache__/
+/model/best_model.pt
+/model/sp_model.model
+/model/sp_model.vocab
